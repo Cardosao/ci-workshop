@@ -1,0 +1,15 @@
+production_proxy:
+  container_name: production_proxy
+  image: jwilder/nginx-proxy
+  ports:
+    - 80:80
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock
+
+
+
+
+
+
+
+docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy

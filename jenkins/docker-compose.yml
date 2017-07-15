@@ -1,0 +1,12 @@
+jenkins:
+  container_name: production_jenkins
+  image: jenkins
+  environment:
+    VIRTUAL_HOST: ci.opsadventures.com
+    VIRTUAL_HOST: 8080
+    JAVA_OPTS: "-Xmx3012m -Xms256m"
+
+
+
+
+    docker run -d --name involves-jenkins -e VIRTUAL_HOST=ci.agilepromoter.com -e VIRTUAL_PORT=8080 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /data/jenkins:/var/jenkins_home -e JAVA_OPTS="-Xmx3012m -Xms256m" -p 8085:8080 --user=root -e CERT_NAME=default jenkins
